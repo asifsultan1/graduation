@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hacker/Medieval Detective Graduation</title>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Example: Include jsPDF and html2canvas from local libs or a CDN -->
+  <script src="libs/html2canvas.min.js"></script>
+  <script src="libs/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <!-- BACKGROUND ANIMATION LAYERS (Optional) -->
+  <div id="bg-layer"></div>  <!-- For matrix code or other animations -->
+  
+  <!-- HOME PAGE / INTRO SECTION -->
+  <section id="home-page" class="active-section">
+    <div class="intro-container">
+      <h1 class="typewriter">Welcome, Seeker of Worthiness</h1>
+      <button id="beginTestBtn" class="main-btn">Begin the Test</button>
+    </div>
+  </section>
+
+  <!-- CHALLENGE FLOW SECTION -->
+  <section id="challenge-section" class="hidden-section">
+    <!-- STEP 1: ENTER NAME -->
+    <div id="step-1" class="step-container active-step">
+      <h2>Who dares to enter?</h2>
+      <input type="text" id="usernameInput" placeholder="Enter your name..." />
+      <button id="submitNameBtn" class="main-btn">Submit Identity</button>
+    </div>
+
+    <!-- STEP 2: FIRST PASSCODE -->
+    <div id="step-2" class="step-container hidden-step">
+      <h2>Enter your first passphrase, traveler.</h2>
+      <input type="password" id="passcode1Input" placeholder="Passcode..." />
+      <button id="verifyPasscode1Btn" class="main-btn">Verify</button>
+      <p id="passcode1Feedback" class="feedback"></p>
+    </div>
+
+    <!-- STEP 3: SECOND PASSCODE -->
+    <div id="step-3" class="step-container hidden-step">
+      <h2>Your journey continues. Input the second key to prove your worth.</h2>
+      <input type="password" id="passcode2Input" placeholder="Second Passcode..." />
+      <button id="verifyPasscode2Btn" class="main-btn">Verify</button>
+      <p id="passcode2Feedback" class="feedback"></p>
+    </div>
+
+    <!-- STEP 4: FINAL PASSCODE -->
+    <div id="step-4" class="step-container hidden-step">
+      <h2>The gates are near. Whisper the sacred phrase to unlock them.</h2>
+      <input type="password" id="passcode3Input" placeholder="Final Passcode..." />
+      <button id="verifyPasscode3Btn" class="main-btn">Verify</button>
+      <button id="hintBtn" class="secondary-btn hidden-step">Request a Clue</button>
+      <p id="passcode3Feedback" class="feedback"></p>
+    </div>
+  </section>
+
+  <!-- CONGRATULATORY SECTION -->
+  <section id="congrats-section" class="hidden-section">
+    <div class="congrats-container">
+      <h2 class="typewriter" id="congratsTitle"></h2>
+      <p id="dynamicMessage"></p>
+
+      <!-- MEME SECTION -->
+      <div id="meme-section">
+        <h3>Your Meme Here</h3>
+        <input type="file" id="memeUpload" accept="image/*" />
+        <div id="memePreview"></div>
+      </div>
+
+      <!-- CERTIFICATE DOWNLOAD -->
+      <button id="certificateBtn" class="main-btn">Claim Your Certificate of Honor</button>
+      <div id="certificatePreview" class="hidden-section">
+        <!-- This div will be captured for PDF generation -->
+        <div id="certificateContent">
+          <h2 id="certTitle">Honorary Graduate</h2>
+          <p id="certName">[User's Name]</p>
+          <p id="certClassName">Honorary Graduate of [Class/Group Name]</p>
+        </div>
+      </div>
+
+      <!-- FRIENDS-ONLY SECTION LINK -->
+      <button id="friendsSectionLink" class="secondary-btn">Enter Friends-Only Vault</button>
+    </div>
+  </section>
+
+  <!-- FRIENDS SECTION (PASSWORD PROTECTED) -->
+  <section id="friends-pass-section" class="hidden-section">
+    <h2>Enter the secret passphrase to access the sacred vault for true friends.</h2>
+    <input type="password" id="friendsPassInput" placeholder="Friends Passphrase..." />
+    <button id="friendsVerifyBtn" class="main-btn">Unlock Vault</button>
+    <p id="friendsPassFeedback" class="feedback"></p>
+  </section>
+
+  <!-- FRIENDS-ONLY CONTENT SECTION -->
+  <section id="friends-section" class="hidden-section">
+    <h2>Special Message from The Little Prince</h2>
+    <p>"It is only with the heart that one can see rightly; what is essential is invisible to the eye."</p>
+    <!-- Optional: Interactive Friends Board or Additional Uploads -->
+    <h3>Class Memories Gallery</h3>
+    <div id="galleryContainer">
+      <!-- Example images or placeholders -->
+      <div class="gallery-item">Image 1 placeholder</div>
+      <div class="gallery-item">Image 2 placeholder</div>
+      <!-- You can dynamically add images or allow users to upload them (requires a real backend). -->
+    </div>
+  </section>
+
+  <!-- OPTIONAL: Additional Riddles/Mini-Games, Hidden Content, Easter Eggs -->
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+</body>
+</html>
